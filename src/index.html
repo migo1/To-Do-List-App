@@ -2,9 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Started</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d19de2aa55.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>To-Do List</title>
   </head>
   <body>
-    <p>test the new changes</p>
+    <div class="container">
+      <div class="wrapper">
+        <p class="title-name">
+          To-Do List <span><i class="icon fas fa-rotate fa-fw"></i></span>
+        </p>
+        <hr />
+        <div class="input-container">
+          <input type="text" class="input-list" placeholder="Add a new to your list ..." />
+        </div>
+        <hr />
+        <ul class="items" id="items">
+        </ul>
+       
+        <button class="clear" id="clear">Clear All Completed</button>
+      </div>
+    </div>
   </body>
 </html>
