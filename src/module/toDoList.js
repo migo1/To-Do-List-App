@@ -1,5 +1,3 @@
-import toggleIcon from "./toggleIcon.js";
-
 export default class ToDoList {
   constructor() {
     this.todoItems = [];
@@ -35,25 +33,31 @@ export default class ToDoList {
 
     const icon = document.createElement("i");
     icon.classList.add("fas", "fa-grip-vertical");
-    selectItem.append(icon);
+    const trashIcon = document.createElement("i");
+    trashIcon.classList.add("fas", "fa-trash");
+    trashIcon.style.display = "none";
+    selectItem.append(icon, trashIcon);
 
     itemText.addEventListener("click", () => {
-      toggleIcon(icon);
+      listItem.style.backgroundColor = "#fffeca";
+      icon.style.display = "none";
+      trashIcon.style.display = "block";
       itemText.contentEditable = true;
       itemText.style.outline = "none";
       itemText.focus();
 
-      if (icon.classList.contains("fa-trash")) {
-        icon.addEventListener("click", (event) => {
-          event.stopPropagation();
-          const taskIndex = toDoTask.index;
-          this.deleteTask(taskIndex);
-        });
-      }
+      trashIcon.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const taskIndex = toDoTask.index;
+        this.deleteTask(taskIndex);
+
+        icon.style.display = "block";
+        trashIcon.style.display = "none";
+      });
     });
 
     itemText.addEventListener("focusout", () => {
-      toggleIcon(icon);
+      listItem.style.backgroundColor = "#fff";
       itemText.contentEditable = false;
       const newText = itemText.innerText.trim();
       toDoTask.desc = newText;
