@@ -61,9 +61,6 @@ export default class ToDoList {
         event.stopPropagation();
         const taskIndex = toDoTask.index;
         this.deleteTask(taskIndex);
-
-        // icon.style.display = "block";
-        // trashIcon.style.display = "none";
       });
     });
 
