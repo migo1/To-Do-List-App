@@ -6,6 +6,11 @@ export default class ToDoList {
     this.items = document.getElementById("items");
     this.submitList();
     this.displayList();
+
+    this.clearButton = document.getElementById("clear");
+    this.clearButton.addEventListener("click", () => {
+      this.clearCompletedTasks();
+    });
   }
 
   store(toDoTask) {
@@ -41,7 +46,7 @@ export default class ToDoList {
     selectItem.append(icon, trashIcon);
 
     checkbox.addEventListener("change", () => {
-      checkboxChange(toDoTask, checkbox, this.todoItems);
+      checkboxChange(toDoTask, checkbox, this.todoItems, itemText);
     });
 
     itemText.addEventListener("click", () => {
@@ -57,19 +62,9 @@ export default class ToDoList {
         const taskIndex = toDoTask.index;
         this.deleteTask(taskIndex);
 
-        icon.style.display = "block";
-        trashIcon.style.display = "none";
+        // icon.style.display = "block";
+        // trashIcon.style.display = "none";
       });
-    });
-
-    listItem.addEventListener("focusout", () => {
-      listItem.style.backgroundColor = "#fff";
-      itemText.contentEditable = false;
-      const newText = itemText.innerText.trim();
-      toDoTask.desc = newText;
-      localStorage.setItem("todoList", JSON.stringify(this.todoItems));
-      icon.style.display = "block";
-      trashIcon.style.display = "none";
     });
 
     itemText.addEventListener("keydown", (event) => {
@@ -80,6 +75,21 @@ export default class ToDoList {
     });
 
     listItem.append(checkbox, itemText, selectItem);
+
+    listItem.addEventListener("focusout", (event) => {
+      const isTrashIconClicked = event.relatedTarget === trashIcon;
+      if (!isTrashIconClicked) {
+        listItem.style.backgroundColor = "#fff";
+        itemText.contentEditable = false;
+        const newText = itemText.innerText.trim();
+        toDoTask.desc = newText;
+        localStorage.setItem("todoList", JSON.stringify(this.todoItems));
+        if (window.getComputedStyle(trashIcon).display !== "block") {
+          icon.style.display = "block";
+          trashIcon.style.display = "none";
+        }
+      }
+    });
 
     const hr = document.createElement("hr");
     this.items.append(listItem, hr);
@@ -117,5 +127,14 @@ export default class ToDoList {
     this.todoItems.forEach((toDoTask) => {
       this.appendTodoItem(toDoTask);
     });
+  }
+
+  clearCompletedTasks() {
+    this.todoItems = this.todoItems.filter((task) => !task.completed);
+    this.todoItems.forEach((task, index) => {
+      task.index = index + 1;
+    });
+    localStorage.setItem("todoList", JSON.stringify(this.todoItems));
+    this.displayList();
   }
 }

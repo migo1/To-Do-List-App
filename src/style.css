@@ -27,7 +27,7 @@ body {
 }
 
 .title-name span {
-  font-size: 12px;
+  font-size: 15px;
   color: #7e7e7e;
 }
 
@@ -45,6 +45,12 @@ hr {
 
 .input-container input::placeholder {
   font-style: italic;
+}
+
+.input-container span {
+  font-size: 15px;
+  color: #7e7e7e;
+  cursor: pointer;
 }
 
 .input-list {
