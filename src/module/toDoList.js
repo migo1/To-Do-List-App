@@ -1,3 +1,5 @@
+import checkboxChange from "./event.js";
+
 export default class ToDoList {
   constructor() {
     this.todoItems = [];
@@ -38,6 +40,10 @@ export default class ToDoList {
     trashIcon.style.display = "none";
     selectItem.append(icon, trashIcon);
 
+    checkbox.addEventListener("change", () => {
+      checkboxChange(toDoTask, checkbox, this.todoItems);
+    });
+
     itemText.addEventListener("click", () => {
       listItem.style.backgroundColor = "#fffeca";
       icon.style.display = "none";
@@ -56,12 +62,14 @@ export default class ToDoList {
       });
     });
 
-    itemText.addEventListener("focusout", () => {
+    listItem.addEventListener("focusout", () => {
       listItem.style.backgroundColor = "#fff";
       itemText.contentEditable = false;
       const newText = itemText.innerText.trim();
       toDoTask.desc = newText;
       localStorage.setItem("todoList", JSON.stringify(this.todoItems));
+      icon.style.display = "block";
+      trashIcon.style.display = "none";
     });
 
     itemText.addEventListener("keydown", (event) => {
