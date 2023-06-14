@@ -122,6 +122,14 @@ You can deploy this on your local dev server
 
 Once success it will automaticly running, you should see your application working at: http://localhost:8080/. Every change you make in js or css files now should be reflected in a browser a few seconds later.
 
+### Testing
+
+To run the test you can run this command
+
+```
+    npm run test
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->

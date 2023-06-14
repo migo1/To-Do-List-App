@@ -3,7 +3,6 @@ import removeTask from "../src/module/removeTask.js";
 describe("removeTask", () => {
   let todoItems;
   beforeEach(() => {
-  
     todoItems = [
       { index: 1, text: "Task 1" },
       { index: 2, text: "Task 2" },
@@ -12,9 +11,8 @@ describe("removeTask", () => {
   });
 
   it("should remove the task from the todoItems array", () => {
-    const taskIndex = 2; 
+    const taskIndex = 2;
     const updatedTodoItems = removeTask(todoItems, taskIndex);
-
 
     expect(updatedTodoItems).toEqual([
       { index: 1, text: "Task 1" },
@@ -23,7 +21,6 @@ describe("removeTask", () => {
   });
 
   it("should remove the corresponding list item from the DOM", () => {
-    
     document.body.innerHTML = `
       <ul>
         <li data-key="1">Task 1</li>
@@ -32,7 +29,7 @@ describe("removeTask", () => {
       </ul>
     `;
 
-    const taskIndex = 2; 
+    const taskIndex = 2;
     removeTask(todoItems, taskIndex);
 
     const listItem = document.querySelector(`li[data-key="${taskIndex}"]`);
@@ -40,7 +37,7 @@ describe("removeTask", () => {
   });
 
   it("should update the index of remaining tasks in the todoItems array", () => {
-    const taskIndex = 1; 
+    const taskIndex = 1;
     const updatedTodoItems = removeTask(todoItems, taskIndex);
 
     expect(updatedTodoItems[0].index).toBe(1);
@@ -48,7 +45,7 @@ describe("removeTask", () => {
   });
 
   it("should return the updated todoItems array", () => {
-    const taskIndex = 2; 
+    const taskIndex = 2;
     const updatedTodoItems = removeTask(todoItems, taskIndex);
 
     expect(updatedTodoItems).toBeInstanceOf(Array);

@@ -16,7 +16,6 @@ describe("newTask", () => {
   });
 
   it("should add a new task to the todoList array", () => {
-  
     const desc = "study react";
 
     newTask(desc, todoList);
@@ -28,22 +27,18 @@ describe("newTask", () => {
   });
 
   it("should increment the index for each new task", () => {
-  
     const desc1 = "refactor code";
     const desc2 = "test code";
 
-  
     newTask(desc1, todoList);
     newTask(desc2, todoList);
 
-    
     expect(todoList.length).toBe(2);
     expect(todoList[0].index).toBe(1);
     expect(todoList[1].index).toBe(2);
   });
 
   it("should add a new task as an <li> element to the DOM", () => {
-    
     const desc = "study react";
 
     newTask(desc, todoList);
