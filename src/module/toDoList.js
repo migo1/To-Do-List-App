@@ -1,4 +1,6 @@
 import checkboxChange from "./event.js";
+import newTask from "./newTask.js";
+import removeTask from "./removeTask.js";
 
 export default class ToDoList {
   constructor() {
@@ -73,19 +75,16 @@ export default class ToDoList {
 
     listItem.append(checkbox, itemText, selectItem);
 
-    listItem.addEventListener("focusout", (event) => {
-      const isTrashIconClicked = event.relatedTarget === trashIcon;
-      if (!isTrashIconClicked) {
+    listItem.addEventListener("focusout", () => {
+      setTimeout(() => {
         listItem.style.backgroundColor = "#fff";
         itemText.contentEditable = false;
         const newText = itemText.innerText.trim();
         toDoTask.desc = newText;
         localStorage.setItem("todoList", JSON.stringify(this.todoItems));
-        if (window.getComputedStyle(trashIcon).display !== "block") {
-          icon.style.display = "block";
-          trashIcon.style.display = "none";
-        }
-      }
+        icon.style.display = "block";
+        trashIcon.style.display = "none";
+      }, 200);
     });
 
     const hr = document.createElement("hr");
@@ -98,12 +97,16 @@ export default class ToDoList {
       if (event.key === "Enter") {
         const desc = inputField.value.trim();
         if (desc !== "") {
-          const newTodo = {
-            desc,
-            completed: false,
-            index: this.todoItems.length + 1,
-          };
-          this.store(newTodo);
+          newTask(desc, this.todoItems);
+          localStorage.setItem("todoList", JSON.stringify(this.todoItems));
+
+          this.displayList();
+          // const newTodo = {
+          //   desc,
+          //   completed: false,
+          //   index: this.todoItems.length + 1,
+          // };
+          // this.store(newTodo);
           inputField.value = "";
         }
       }
@@ -111,10 +114,11 @@ export default class ToDoList {
   }
 
   deleteTask(taskIndex) {
-    this.todoItems = this.todoItems.filter((task) => task.index !== taskIndex);
-    this.todoItems.forEach((task, index) => {
-      task.index = index + 1;
-    });
+    this.todoItems = removeTask(this.todoItems, taskIndex);
+    // this.todoItems = this.todoItems.filter((task) => task.index !== taskIndex);
+    // this.todoItems.forEach((task, index) => {
+    //   task.index = index + 1;
+    // });
     localStorage.setItem("todoList", JSON.stringify(this.todoItems));
     this.displayList();
   }
