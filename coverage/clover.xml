@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686683783273" clover="3.2.0">
-  <project timestamp="1686683783273" name="All files">
-    <metrics statements="27" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="31" coveredelements="31" complexity="0" loc="27" ncloc="27" packages="1" files="2" classes="2"/>
+<coverage generated="1686692504212" clover="3.2.0">
+  <project timestamp="1686692504213" name="All files">
+    <metrics statements="30" coveredstatements="30" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="36" coveredelements="36" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
     <file name="newTask.js" path="/home/migo/Documents/Microverse/Module2/week2/To-Do-List-App/src/module/newTask.js">
       <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="4" type="stmt"/>
@@ -13,27 +13,30 @@
       <line num="15" count="4" type="stmt"/>
       <line num="16" count="4" type="stmt"/>
       <line num="17" count="4" type="stmt"/>
-      <line num="22" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="21" count="4" type="stmt"/>
       <line num="23" count="4" type="stmt"/>
       <line num="24" count="4" type="stmt"/>
       <line num="26" count="4" type="stmt"/>
       <line num="27" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
       <line num="29" count="4" type="stmt"/>
       <line num="30" count="4" type="stmt"/>
       <line num="31" count="4" type="stmt"/>
-      <line num="32" count="4" type="stmt"/>
       <line num="33" count="4" type="stmt"/>
-      <line num="34" count="4" type="stmt"/>
-      <line num="58" count="4" type="stmt"/>
-      <line num="71" count="4" type="stmt"/>
-      <line num="72" count="4" type="stmt"/>
+      <line num="35" count="4" type="stmt"/>
+      <line num="36" count="4" type="stmt"/>
     </file>
     <file name="removeTask.js" path="/home/migo/Documents/Microverse/Module2/week2/To-Do-List-App/src/module/removeTask.js">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <line num="2" count="3" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="3" count="4" type="cond" truecount="2" falsecount="0"/>
       <line num="4" count="2" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
+      <line num="6" count="12" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="8" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>
