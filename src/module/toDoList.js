@@ -101,12 +101,6 @@ export default class ToDoList {
           localStorage.setItem("todoList", JSON.stringify(this.todoItems));
 
           this.displayList();
-          // const newTodo = {
-          //   desc,
-          //   completed: false,
-          //   index: this.todoItems.length + 1,
-          // };
-          // this.store(newTodo);
           inputField.value = "";
         }
       }
@@ -115,10 +109,6 @@ export default class ToDoList {
 
   deleteTask(taskIndex) {
     this.todoItems = removeTask(this.todoItems, taskIndex);
-    // this.todoItems = this.todoItems.filter((task) => task.index !== taskIndex);
-    // this.todoItems.forEach((task, index) => {
-    //   task.index = index + 1;
-    // });
     localStorage.setItem("todoList", JSON.stringify(this.todoItems));
     this.displayList();
   }
