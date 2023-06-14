@@ -133,7 +133,10 @@ Once success it will automaticly running, you should see your application workin
 - GitHub: (https://github.com/migo1)
 - Twitter: (https://twitter.com/@ert49554392)
 - LinkedIn: (https://www.linkedin.com/in/robert-m-3b3b1116a/)
+👤 Lala Aicha El Vadel
 
+- GitHub: (https://github.com/leloufadel)
+-LinkedIn: (https://www.linkedin.com/in/LalaAichaElVadel/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

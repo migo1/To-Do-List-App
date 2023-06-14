@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686692504212" clover="3.2.0">
-  <project timestamp="1686692504213" name="All files">
+<coverage generated="1686731133717" clover="3.2.0">
+  <project timestamp="1686731133717" name="All files">
     <metrics statements="30" coveredstatements="30" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="36" coveredelements="36" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
-    <file name="newTask.js" path="/home/migo/Documents/Microverse/Module2/week2/To-Do-List-App/src/module/newTask.js">
+    <file name="newTask.js" path="C:\Users\Lelou\Desktop\Module--2\To-Do-List-App\src\module\newTask.js">
       <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="4" type="stmt"/>
       <line num="4" count="4" type="stmt"/>
@@ -28,7 +28,7 @@
       <line num="35" count="4" type="stmt"/>
       <line num="36" count="4" type="stmt"/>
     </file>
-    <file name="removeTask.js" path="/home/migo/Documents/Microverse/Module2/week2/To-Do-List-App/src/module/removeTask.js">
+    <file name="removeTask.js" path="C:\Users\Lelou\Desktop\Module--2\To-Do-List-App\src\module\removeTask.js">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <line num="2" count="4" type="stmt"/>
       <line num="3" count="4" type="cond" truecount="2" falsecount="0"/>

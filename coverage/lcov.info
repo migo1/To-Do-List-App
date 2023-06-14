@@ -1,5 +1,5 @@
 TN:
-SF:src/module/newTask.js
+SF:src\module\newTask.js
 FN:1,newTask
 FNF:1
 FNH:1
@@ -33,7 +33,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/module/removeTask.js
+SF:src\module\removeTask.js
 FN:1,removeTask
 FN:6,(anonymous_1)
 FN:7,(anonymous_2)

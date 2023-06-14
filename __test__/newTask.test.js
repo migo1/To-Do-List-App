@@ -16,13 +16,11 @@ describe("newTask", () => {
   });
 
   it("should add a new task to the todoList array", () => {
-    // Arrange
+  
     const desc = "study react";
 
-    // Act
     newTask(desc, todoList);
 
-    // Assert
     expect(todoList.length).toBe(1);
     expect(todoList[0].desc).toBe(desc);
     expect(todoList[0].completed).toBe(false);
@@ -30,28 +28,26 @@ describe("newTask", () => {
   });
 
   it("should increment the index for each new task", () => {
-    // Arrange
+  
     const desc1 = "refactor code";
     const desc2 = "test code";
 
-    // Act
+  
     newTask(desc1, todoList);
     newTask(desc2, todoList);
 
-    // Assert
+    
     expect(todoList.length).toBe(2);
     expect(todoList[0].index).toBe(1);
     expect(todoList[1].index).toBe(2);
   });
 
   it("should add a new task as an <li> element to the DOM", () => {
-    // Arrange
+    
     const desc = "study react";
 
-    // Act
     newTask(desc, todoList);
 
-    // Assert
     expect(todoList.length).toBe(1);
 
     const listItem = items.querySelector("li");
