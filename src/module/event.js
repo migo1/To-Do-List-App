@@ -1,6 +1,5 @@
-const checkboxChange = (toDoTask, checkbox, items, text) => {
+const checkboxChange = (toDoTask, checkbox, text) => {
   toDoTask.completed = checkbox.checked;
-  localStorage.setItem("todoList", JSON.stringify(items));
   if (checkbox.checked) {
     text.style.textDecoration = "line-through";
   } else {

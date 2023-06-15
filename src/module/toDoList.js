@@ -1,6 +1,8 @@
 import checkboxChange from "./event.js";
 import newTask from "./newTask.js";
 import removeTask from "./removeTask.js";
+import editTask from "./editTask.js";
+import clearCompleted from "./clearCompleted.js";
 
 export default class ToDoList {
   constructor() {
@@ -48,7 +50,8 @@ export default class ToDoList {
     selectItem.append(icon, trashIcon);
 
     checkbox.addEventListener("change", () => {
-      checkboxChange(toDoTask, checkbox, this.todoItems, itemText);
+      checkboxChange(toDoTask, checkbox, itemText);
+      localStorage.setItem("todoList", JSON.stringify(this.todoItems));
     });
 
     itemText.addEventListener("click", () => {
@@ -78,9 +81,7 @@ export default class ToDoList {
     listItem.addEventListener("focusout", () => {
       setTimeout(() => {
         listItem.style.backgroundColor = "#fff";
-        itemText.contentEditable = false;
-        const newText = itemText.innerText.trim();
-        toDoTask.desc = newText;
+        editTask(itemText, toDoTask);
         localStorage.setItem("todoList", JSON.stringify(this.todoItems));
         icon.style.display = "block";
         trashIcon.style.display = "none";
@@ -121,7 +122,7 @@ export default class ToDoList {
   }
 
   clearCompletedTasks() {
-    this.todoItems = this.todoItems.filter((task) => !task.completed);
+    this.todoItems = clearCompleted(this.todoItems);
     this.todoItems.forEach((task, index) => {
       task.index = index + 1;
     });
