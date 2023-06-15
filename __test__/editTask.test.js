@@ -16,7 +16,6 @@ describe("editTask", () => {
   });
 
   it("should update the task description correctly", () => {
-  
     const text = document.createElement("span");
     const task = { desc: "Task" };
     const updatedText = "Updated Task";
@@ -28,10 +27,8 @@ describe("editTask", () => {
   });
 
   it("should edit the task description in the DOM", () => {
-  
     const textElement = document.querySelector(".item-text");
     const updatedText = "Updated Task";
-
 
     textElement.innerText = updatedText;
     const task = { desc: "Task" };
