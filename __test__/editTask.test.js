@@ -16,30 +16,27 @@ describe("editTask", () => {
   });
 
   it("should update the task description correctly", () => {
-    // Arrange
+  
     const text = document.createElement("span");
     const task = { desc: "Task" };
     const updatedText = "Updated Task";
 
-    // Act
     text.innerText = updatedText;
     editTask(text, task);
 
-    // Assert
     expect(task.desc).toBe(updatedText);
   });
 
   it("should edit the task description in the DOM", () => {
-    // Arrange
+  
     const textElement = document.querySelector(".item-text");
     const updatedText = "Updated Task";
 
-    // Act
+
     textElement.innerText = updatedText;
     const task = { desc: "Task" };
     editTask(textElement, task);
 
-    // Assert
     expect(task.desc).toBe(updatedText);
     expect(textElement.innerText).toBe(updatedText);
   });
