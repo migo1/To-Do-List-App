@@ -13,7 +13,6 @@ describe("checkboxChange", () => {
   });
 
   it("should update the 'completed' status correctly", () => {
-  
     const checkbox = document.querySelector(".check");
     const text = document.querySelector(".item-text");
     const toDoTask = { completed: false };
@@ -26,7 +25,6 @@ describe("checkboxChange", () => {
   });
 
   it("should update the 'completed' status in the DOM", () => {
-  
     const checkbox = document.querySelector(".check");
     const text = document.querySelector(".item-text");
     const toDoTask = { completed: false };
@@ -40,7 +38,6 @@ describe("checkboxChange", () => {
   });
 
   it("should update the 'textDecoration' in the DOM", () => {
-  
     const checkbox = document.querySelector(".check");
     const text = document.querySelector(".item-text");
     const toDoTask = { completed: true };

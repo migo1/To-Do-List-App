@@ -21,16 +21,13 @@ describe("clearCompleted", () => {
   });
 
   it("should remove completed tasks from the list", () => {
-    
     const tasks = [
       { desc: "Task 1", completed: true },
       { desc: "Task 2", completed: false },
       { desc: "Task 3", completed: true },
     ];
 
-
     const updatedTasks = clearCompleted(tasks);
-
 
     expect(updatedTasks.length).toBe(1);
     expect(updatedTasks[0].desc).toBe("Task 2");
