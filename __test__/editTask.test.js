@@ -14,7 +14,6 @@ describe("editTask", () => {
       </ul>
     `;
   });
-
   it("should update the task description correctly", () => {
     const text = document.createElement("span");
     const task = { desc: "Task" };
